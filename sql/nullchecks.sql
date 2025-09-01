@@ -295,8 +295,8 @@ WHERE isnullstr(t.status );
 
 -- REPORT 
 
-/* branches table check null values 
- * branch_code          0
+-- branches table checks null values
+/* branch_code          0
  * branch_name          0
  * city                 0 
  * region               0
