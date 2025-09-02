@@ -1,6 +1,6 @@
 
 -- =============  Checks data types ===========
-SELECT *FROM  customers c   ;
+SELECT *FROM transactions t  ;
 -- account
 SELECT column_name, data_type
 FROM information_schema.columns
@@ -66,16 +66,16 @@ WHERE table_schema = 'public'
  */
 
 -- customer table checks null values 
-/*customer_id           character varying ---> VARCHAR(100)
+/* customer_id           character varying ---> VARCHAR(50)
  * first_name           character varying ---> VARCHAR(100)
  * last_name            character varying ---> VARCHAR(100)
- * dob                  character varying ---> VARCHAR(50)
- * gender               character varying ---> VARCHAR(50)
- * national_id          character varying ---> VARCHAR(50)
- * email                character varying ---> VARCHAR(50)
+ * dob                  character varying ---> TIMESTAMP
+ * gender               character varying ---> VARCHAR(3)
+ * national_id          character varying ---> VARCHAR(15)
+ * email                character varying ---> VARCHAR(100)
  * phone_number         character varying ---> VARCHAR(50)
  * kyc_status           character varying ---> VARCHAR(50)
- * account_open_date    character varying ---> VARCHAR(50)
+ * account_open_date    character varying ---> DATE
  * customer_segment     character varying ---> VARCHAR(50)
  * branch_code          character varying ---> VARCHAR(50)
  */
@@ -83,31 +83,33 @@ WHERE table_schema = 'public'
 
 -- loans table checks null values
 
-/* loan_id              0
- * customer_id          0
- * loan_type            0
- * principal_amount     0
- * interest_rate        0
- * loan_term_months     0
- * start_date           0
- * end_date             0
- * payment_frequency    0
- * loan_status          0
- * past_due_amount      0
+/* loan_id              character varying ---> VARCHAR(50)
+ * customer_id          character varying ---> VARCHAR(50)
+ * loan_type            character varying ---> VARCHAR(50)
+ * principal_amount     FLOAT4            ---> numeric(10,2)
+ * interest_rate        FLOAT4            ---> numeric(2,2)
+ * loan_term_months     İNT4              ---> İNT
+ * start_date           character varying ---> DATE
+ * end_date             character varying ---> DATE
+ * payment_frequency    character varying ---> VARCHAR(50)
+ * loan_status          character varying ---> VARCHAR(50)
+ * past_due_amount      FLOAT4            ---> NUMERİC(10,2)
  */
 
 -- transactions table checks null values
 
-/* transaction_id        0
- * account_id            0
- * transaction_type      0 
- * amount                0
- * currency              0
- * transaction_date      0
- * branch_code           0
- * merchant_category     0
- * status                0
+/* transaction_id        character varying ---> VARCHAR(50)
+ * account_id            character varying ---> VARCHAR(50)
+ * transaction_type      character varying ---> VARCHAR(50) 
+ * amount                FLOAT4            ---> NUMERİC(10,2)
+ * currency              character varying ---> VARCHAR(50)
+ * transaction_date      character varying ---> DATE
+ * branch_code           character varying ---> VARCHAR(50)
+ * merchant_category     character varying ---> VARCHAR(50)
+ * status                character varying ---> VARCHAR(50)
  */
+
+
 
 
 
